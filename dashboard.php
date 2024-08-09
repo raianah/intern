@@ -112,7 +112,7 @@
 
 
 
-
+    <script>
 
         function logout(){
             let ask = confirm('Are you want to Log-out?');
