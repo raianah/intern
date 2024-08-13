@@ -18,6 +18,7 @@
                 <li><a href="dashboard.php"><i class="fas fa-home"></i> <span>Home</span></a></li>
                 <li><a href="students.php"><i class="fas fa-users"></i> <span>Interns</span></a></li>
                 <li><a href="attendance.php"><i class="fas fa-chart-line"></i> <span>Analytics</span></a></li>
+                <li><a href="addup.php"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
             </ul>
             <div class="logout-container">
                 <button class="Btn" onclick="logout()">
