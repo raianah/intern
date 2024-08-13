@@ -2,7 +2,7 @@
 
 require 'server.php';
 session_start();
-
+// error_reporting(0);
 
 
 
@@ -22,6 +22,80 @@ session_start();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="png" href="img/logo-icon.png">
 </head>
+
+<!-- PHP for add intern -->
+
+<?php
+
+// if(isset($_POST['add'])){
+//     $Fname = $_POST['firstName'];
+//     $Mname = $_POST['middleName'];
+//     $Lname = $_POST['lastName'];
+//     $seex = $_POST['sex'];
+//     $age = $_POST['age'];
+//     $courses = $_POST['coursename'];
+//     $schoolname = $_POST["schools"];
+//     $reqhours = $_POST['hours'];
+//     $Sdate = $_POST['startDate'];
+//     $Edate = $_POST['endDate'];
+//     $intern_image = $_FILES['fileUpload']['name'];
+//     $intern_temp_name = $_FILES['fileUpload']['tmp_name'];
+//     $img_folder = '../img/' . $intern_image;
+
+
+//     if(empty($Fname) || empty($Mname) || empty($Lname) || empty($seex) || empty($age) || empty($courses) || empty($schoolname) || empty($reqhours) || empty($Sdate) || empty($Edate)){
+//         echo "<script>window.alert('Fill All The Fields! Please Try Again!');</script>";
+//     }
+//     else {
+        
+//         $student = "INSERT INTO studentinfo(fname, mname, lname, age, sex, courseid, schoolid, hrequired, startdate, end_date) VALUES('$Fname','$Mname','$Lname', '$age', '$seex','$courses', '$schoolname', '$reqhours', '$Sdate', '$Edate');";
+//         $query = mysqli_query($conn, $student); 
+
+//         echo "<script>window.alert('Register Successfully!');</script>";
+//         echo "<script>window.location,assign('dashboard.php')</script>";
+//     } 
+    
+//         // if($query){
+//         //     move_uploaded_file($intern_temp_name, $img_folder);
+
+//         // }
+//         // else {
+//         //     echo "<script>window.alert('Error Occured!')</script>";
+//         // }
+
+//         // if($query){
+            
+//         //     $res = [
+//         //         'status' => 200,
+//         //         'message' => 'Register Successfully'
+//         //     ];
+//         //     echo json_encode($res);
+//         //     return true;
+
+//         // }
+//         // else {
+            
+//         //     $res = [
+//         //         'status' => 500,
+//         //         'message' => 'Intern Not Created'
+//         //     ];
+//         //     echo json_encode($res);
+//         //     return false;
+
+//         // }
+    
+        
+    
+
+// }
+
+
+
+
+
+
+?>
+
 <body>
     <div class="container">
     <nav class="sidebar">
@@ -64,40 +138,46 @@ session_start();
     <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Add Intern</h2>
-        <form id="addInternForm" enctype="multipart/form-data"> <!-- Add enctype attribute for file uploads -->
+        <form id="addInternForm" method="POST" action="addstudent.php" enctype="multipart/form-data"> <!-- Add enctype attribute for file uploads -->
             <div>
-                <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" >
             </div>
             <div>
                 <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
             </div>
             <div>
-                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" >
             </div>
             <div>
-                <select id="sex" name="sex" required>
+                <!-- <select id="" name="Sex">
                     <option value="" disabled selected>Sex</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="M"> Male </option>
+                    <option value="F"> Female </option>
+                </select> -->
+                <select name="sex">
+                    <option value="" disabled selected>Sex</option>
+                    <option value="M"> Male </option>
+                    <option value="F"> Female </option>
                 </select>
             </div>
             <div>
-                <input type="number" id="age" name="age" placeholder="Age" required>
+                <input type="text" name="age" placeholder="Age" >
             </div>
             <div>
-            <?php
-                    $fetching = "SELECT * FROM coursetbl";
-                    $fetchquery = mysqli_query($conn, $fetching);
-                    
-                ?>
-                <select id="course" name="course" required>
+                <input type="text" id="hours" name="hours" placeholder="Hours Required" >
+            </div>
+            <div>   
+                <select id="course" name="course">
                     <option value="" disabled selected>Course</option>
                     <?php
+                        $fetching = "SELECT * FROM coursetbl";
+                        $fetchquery = mysqli_query($conn, $fetching);
+
                         while($row = mysqli_fetch_assoc($fetchquery)){
                             $courseid = $row['courseid'];
                             $course = $row['course'];
                     ?>
-                            <option value="<?php $courseid ?>"><?php echo $course;?></option>        
+                            <option value="<?php $courseid; ?>"><?php echo $course;?></option>        
                     <?php
                         }
 
@@ -108,28 +188,25 @@ session_start();
             </div>
             <div class="form-group">
                 <label for="startDate">Start Date</label>
-                <input type="date" id="startDate" name="startDate" required>
+                <input type="date" id="startDate" name="startDate" >
             </div>
             <div class="form-group">
                 <label for="endDate">End Date</label>
-                <input type="date" id="endDate" name="endDate" required>
+                <input type="date" id="endDate" name="endDate" >
             </div>
             <div>
-            <?php
-                    $fetch = "SELECT * FROM school ORDER BY schoolname;";
-                    $query = mysqli_query($conn, $fetch);
-                    
-
-                ?>
-                <select id="course" name="course" required>
-                    <option value="" disabled selected>School Name</option>
+                <select id="" name="school">
+                    <option disabled selected>School Name</option>
                     <?php
+                        $school = "SELECT * FROM school ORDER BY schoolname";
+                        $query = mysqli_query($conn, $school);
+
                         while($row = mysqli_fetch_assoc($query)){
                             $Sid = $row['id'];
                             $school = $row['schoolname'];
-                        ?>    
+                    ?>    
                             <option value="<?php $Sid; ?>"><?php echo $school;?></option>
-                        <?php
+                    <?php
                         }
                     ?>
                     <!-- Add more options as needed -->
@@ -141,11 +218,11 @@ session_start();
     <label for="fileUpload" class="custom-file-upload">
         <span>Choose File</span>
     </label>
-    <input type="file" id="fileUpload" name="fileUpload" style="display: none;" />
+    <input type="file" id="fileUpload" name="fileUpload" accept="image/*" style="display: none;" />
     
 </div>
             <div style="flex: 1 1 100%;">
-                <button type="submit">Add Intern</button>
+                <button type="submit" name="add">Add Intern</button>
             </div>
         </form>
     </div>
@@ -198,6 +275,7 @@ session_start();
             <table>
     <thead>
         <tr>
+            <th>Id</th>
             <th>Name</th>
             <th>School / University</th>
             <th>Course</th>
@@ -218,7 +296,7 @@ session_start();
                 $exist = mysqli_num_rows($searchquery);
 
                 if($exist > 0){
-                    while($row = mysqli_fetch_assoc($searchquery)){
+                    while($row = mysqli_fetch_all($searchquery)){
                         $fname  = $row['fname'];
                         $mname  = $row['mname'];
                         $lname  = $row['lname'];
@@ -251,6 +329,7 @@ session_start();
                 $query = mysqli_query($conn, $sql);
 
                 while($row = mysqli_fetch_assoc($query)){
+                    $id = $row['studid'];
                     $fname  = $row['fname'];
                     $mname  = $row['mname'];
                     $lname  = $row['lname'];
@@ -264,6 +343,7 @@ session_start();
                     $status = $row['status'];
 
                     echo "<tr class='highlight'>";
+                    echo "<td>".$id."</td>";
                     echo "<td>" .$lname. "," .$fname. " " .$mname. "</td>";
                     echo "<td>" .$school. "</td>";
                     echo "<td>" .$course."</td>";
@@ -281,6 +361,40 @@ session_start();
 
         </main>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Ajax Script -->
+     <!-- <script>
+        $(document).on('submit', '#addInternForm' ,function(e){
+            
+            e.preventDefault();
+
+            let formData = new FormData(this);
+            formData.append("add_intern", true);
+            $.ajax({
+                type : "method",
+                url: "students.php",
+                data: "formData",
+                processData: false,
+                contentType: false,
+                success:function(response) {
+                    let res = jQuery.parseJSON(response);
+
+                    if(res.status == 422){
+                        alert(res.message);
+
+                    }
+                    else if (res.status == 200){
+                        alert('Successfully Added!');
+                        $('#addInternForm').modal('hide');
+                        $('#addInternModal')[0].reset();
+                    }
+                }
+            });
+
+
+
+        });
+     </script> -->
     <script>
 
 

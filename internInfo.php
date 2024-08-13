@@ -18,6 +18,7 @@
                 <li><a href="dashboard.php"><i class="fas fa-home"></i> <span>Home</span></a></li>
                 <li><a href="students.php"><i class="fas fa-users"></i> <span>Interns</span></a></li>
                 <li><a href="attendance.php"><i class="fas fa-chart-line"></i> <span>Attendance</span></a></li>
+                <li><a href="attendance.php"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
             </ul>
             <div class="logout-container">
                 <button class="Btn">
@@ -39,7 +40,7 @@
         </div>
         <div class="details">
     <div class="detail">Name: Mark Joven A. Garcia</div>
-    <div class="detail">BirthDate: 04/05/03</div>
+    <div class="detail">Birth  Date: 04/05/03</div>
     <div class="detail">Age: 21</div>
     <div class="detail">Address: Timalan Conception Naic, Cavite</div>
     <div class="detail">Contact No: 093564457486</div>
