@@ -56,7 +56,7 @@ if (isset($_POST['login'])) {
                 $user = $row['username'];
                 $hashpwd = $row['password'];
                 $acctype = $row['accrole'];
-                
+
 
                 if (($user == $username)) {
                     if (!password_verify($password, $hashpwd)) {
@@ -89,7 +89,6 @@ if (isset($_POST['login'])) {
 
 
 <body>
-    <header></header>
     <main>
         <section id="loginctn">
             <div id="bgctn">

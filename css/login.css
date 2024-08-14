@@ -7,7 +7,6 @@
 html {
   background: url("eac-bg.jpg") no-repeat center;
   background-size: cover;
-  
 }
 
 /* main { 
@@ -18,7 +17,7 @@ section {
 #loginctn {
   position: relative;
   /* display: flex;
-  justify-content: right; */ 
+  justify-content: right; */
   padding: 50px 0 100px 0;
 }
 #bgctn {

@@ -44,25 +44,9 @@ if($_SESSION['username']){
     <main>
         <!-- <a href="#" id="insert-btn">Insert</a>
         <div class="popup" >
-			<!-- <a href="#" id="close">CLOSE</a> -->
-			<div class="overlay"></div>
-            <div class="content">
-                <h2>Insert New Data</h2>
-                <form action="" method="">
-                    <div class="course">
-                        <input type="text" name="course" id="">
-                    </div>
-                    
-                    <div class="college">
-                        <input type="text" name="college" id="">
-                    </div>
-                    <div class="controls">
-                        <a href=""><button class="close-btn"> Cancel</button></a>
-                        <input type="submit" class="insert" value="Insert Data" name="insert">
-                    </div>
-                </form>
-            </div>
-        </div> -->
+			<a href="#" id="close">CLOSE</a> -->
+			
+        </div> 
     </main>
 </body>
 <script>
