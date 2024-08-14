@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html lang="en-US">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="icon" type="image/png" href="img/logo-icon.png">
-    <title>LOGIN | GML</title>
-    <script type="text/javascript" src="js/function.js"></script>
+    <link rel="stylesheet" href="css/login2.css">
+    <title>Login</title>
 </head>
-
 <body>
-    <?php
+<?php
     require 'server.php'; // Requiring the file that connects to the server
     session_start();
     error_reporting(0);
 
+    // Uncomment these if you want to restrict access to logged-in users
     /*
-    if ($_SESSION['username']) {
+    if (isset($_SESSION['username'])) {
         header('location: home.php');
         exit();
     }
 
-    if ($_SESSION['accrole']) {
+    if (isset($_SESSION['accrole'])) {
         header('location: admin.php');
         exit();
     }
@@ -36,17 +33,9 @@
             echo "<script>alert('Please Enter A Valid Account! Thank You!');</script>";
             echo "<script>window.location.assign('index.php');</script>";
         } else {
-<<<<<<< HEAD
-            while ($row = mysqli_fetch_assoc($query)) {
-                $user = $row['username'];
-                $hashpwd = $row['password'];
-                $acctype = $row['accrole'];
-
-=======
             $sql = "SELECT * FROM accounttbl WHERE username = '$username';";
             $query = mysqli_query($conn, $sql);
             $exist = mysqli_num_rows($query);
->>>>>>> 9d845a1bc8416a8f912ff044552ffec67e4abc95
 
             if ($exist == 0) {
                 echo "<script>alert('Username Doesn\'t Exist!');</script>";
@@ -70,7 +59,7 @@
                                 echo "<script>window.location.assign('dashboard.php');</script>";
                             } else {
                                 echo "<script>alert('Invalid Credentials!');</script>";
-                                echo "<script>window.location.assign('index.php');</script>";
+                                echo "<script>window.location.assign('login.php');</script>";
                             }
                         }
                     }
@@ -78,47 +67,30 @@
             }
         }
     }
-    ?>
-
-<<<<<<< HEAD
-
-
-
-
-
 ?>
 
-
-<body>
-=======
-    <header></header>
->>>>>>> 9d845a1bc8416a8f912ff044552ffec67e4abc95
-    <main>
-    <section id="loginctn">
-        <div id="bgctn">
-            <img src="img/logo.jpg" alt="User Icon">
-            <h4>Login</h4>
-            <form action="index.php" method="POST">
-                <div id="form-box">
-                    <div id="userctn">
-                        <input type="text" id="user" name="userName" placeholder="Username">
-                    </div>
-                    <div id="passctn">
-                        <input type="password" id="pass" name="passWord" placeholder="Password">
-                    </div>
-                    <div id="rememberme">
-                        <input type="checkbox" id="remember" name="remember">
-                        <label for="remember">Remember Me</label>
-                    </div>
-                </div>
-                <div id="login">
-                    <input id="loginbtn" type="submit" name="login" value="Login" onclick="signin()">
-                </div>
-            </form>
-            <p id="forgot"><a href="forgot.php" target="_blank">Forgot Password?</a></p>
+<div class="container">
+    <div class="background-left"></div>
+    <div class="quote-overlay">
+        <div class="quote-container">
+            <p id="quote">Loading...</p>
         </div>
-    </section>
-    </main>
+    </div>
+    <div class="login-form">
+        <img src="img/logo-icon.png" alt="Logo" class="logo">
+        <h2>Login</h2>
+        <!-- Update form to submit to PHP script -->
+        <form action="login.php" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="userName" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="passWord" required>
+            
+            <button type="submit" name="login">Login</button>
+        </form>
+    </div>
+</div>
+<script src="js/scripts.js"></script>
 </body>
-
 </html>

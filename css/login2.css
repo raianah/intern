@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); /* Merriweather for quotes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.background-left {
+    background: url("../img/eac-bg.jpg") no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    filter: brightness(60%);
+    background-position: center;
+    background-position: -250px;
+}
+
+.quote-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: left; /* Center horizontally */
+    padding-left: 160px;
+}
+
+.quote-container {
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+    width: 60%;
+    max-width: 700px;
+    height: auto; /* Adjust height automatically */
+    box-sizing: border-box;
+    transition: opacity 1s ease-in-out;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Font shadow for readability */
+    background-position: -300px;
+    letter-spacing: 2px; /* Add letter spacing */
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.login-form {
+    background: #f4f4f4;
+    padding: 40px;
+    border-radius: 10px; /* Simplified border-radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Simplified box-shadow */
+    width: 500px;
+    box-sizing: border-box;
+    z-index: 2;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    border-radius: 30px 0 0 30px;
+    
+}
+
+.login-form .logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.login-form h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Font shadow */
+    letter-spacing: 2px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+.login-form input {
+    width: 300px; /* Full width of parent */
+    padding: 12px;
+    margin-bottom: 20px; /* Reduced space between inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-sizing: border-box; /* Include padding and border in width and height */
+    font-size: 14px; /* Font size */
+    color: #333; /* Dark gray text color */
+    
+}
+
+.login-form input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default focus outline */
+}
+
+.login-form button {
+    width: 150px; /* Fixed width */
+    padding: 10px;
+    background-color: #007bff; /* Blue background */
+    border: none; /* No border */
+    border-radius: 5px; /* Slightly rounded corners */
+    color: white; /* White text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: block; /* Block level element */
+    margin: 20px 0 0; /* Center the button (top margin adjusted) */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    text-align: center; /* Center text inside button */
+    margin-left: 75px;
+}
+
+.login-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+    .login-form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-form .logo {
+        max-width: 120px;
+    }
+
+    .login-form h2 {
+        font-size: 20px;
+    }
+
+    .login-form input {
+        padding: 15px;
+    }
+
+    .login-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .login-form .logo {
+        max-width: 100px;
+    }
+
+    .login-form h2 {
+        font-size: 18px;
+    }
+
+    .login-form input {
+        padding: 12px;
+    }
+
+    .login-form button {
+        width: 100%;
+    }
+}
