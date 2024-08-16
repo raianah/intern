@@ -24,79 +24,6 @@ session_start();
     <link rel="icon" type="png" href="img/logo-icon.png">
 </head>
 
-<!-- PHP for add intern -->
-
-<?php
-
-// if(isset($_POST['add'])){
-//     $Fname = $_POST['firstName'];
-//     $Mname = $_POST['middleName'];
-//     $Lname = $_POST['lastName'];
-//     $seex = $_POST['sex'];
-//     $age = $_POST['age'];
-//     $courses = $_POST['coursename'];
-//     $schoolname = $_POST["schools"];
-//     $reqhours = $_POST['hours'];
-//     $Sdate = $_POST['startDate'];
-//     $Edate = $_POST['endDate'];
-//     $intern_image = $_FILES['fileUpload']['name'];
-//     $intern_temp_name = $_FILES['fileUpload']['tmp_name'];
-//     $img_folder = '../img/' . $intern_image;
-
-
-//     if(empty($Fname) || empty($Mname) || empty($Lname) || empty($seex) || empty($age) || empty($courses) || empty($schoolname) || empty($reqhours) || empty($Sdate) || empty($Edate)){
-//         echo "<script>window.alert('Fill All The Fields! Please Try Again!');</script>";
-//     }
-//     else {
-
-//         $student = "INSERT INTO studentinfo(fname, mname, lname, age, sex, courseid, schoolid, hrequired, startdate, end_date) VALUES('$Fname','$Mname','$Lname', '$age', '$seex','$courses', '$schoolname', '$reqhours', '$Sdate', '$Edate');";
-//         $query = mysqli_query($conn, $student); 
-
-//         echo "<script>window.alert('Register Successfully!');</script>";
-//         echo "<script>window.location,assign('dashboard.php')</script>";
-//     } 
-
-//         // if($query){
-//         //     move_uploaded_file($intern_temp_name, $img_folder);
-
-//         // }
-//         // else {
-//         //     echo "<script>window.alert('Error Occured!')</script>";
-//         // }
-
-//         // if($query){
-
-//         //     $res = [
-//         //         'status' => 200,
-//         //         'message' => 'Register Successfully'
-//         //     ];
-//         //     echo json_encode($res);
-//         //     return true;
-
-//         // }
-//         // else {
-
-//         //     $res = [
-//         //         'status' => 500,
-//         //         'message' => 'Intern Not Created'
-//         //     ];
-//         //     echo json_encode($res);
-//         //     return false;
-
-//         // }
-
-
-
-
-// }
-
-
-
-
-
-
-?>
-
 <body>
 
     <?php include 'component/navbar.php'; ?>
@@ -133,11 +60,6 @@ session_start();
                         <input type="text" id="lastName" name="lastName" placeholder="Last Name">
                     </div>
                     <div>
-                        <!-- <select id="" name="Sex">
-                    <option value="" disabled selected>Sex</option>
-                    <option value="M"> Male </option>
-                    <option value="F"> Female </option>
-                </select> -->
                         <select name="sex">
                             <option value="" disabled selected>Sex</option>
                             <option value="M"> Male </option>
@@ -164,19 +86,9 @@ session_start();
                                 <option value="<?php echo $courseid; ?>"><?php echo $course; ?></option>
                                 <?php
                             }
-
-
                             ?>
                             <!-- Add more options as needed -->
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="startDate">Start Date</label>
-                        <input type="date" id="startDate" name="startDate">
-                    </div>
-                    <div class="form-group">
-                        <label for="endDate">End Date</label>
-                        <input type="date" id="endDate" name="endDate">
                     </div>
                     <div>
                         <select id="" name="school">
@@ -193,12 +105,19 @@ session_start();
                                 <?php
                             }
                             ?>
-                            <!-- Add more options as needed -->
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="startDate">Start Date</label>
+                        <input type="date" id="startDate" name="startDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">End Date</label>
+                        <input type="date" id="endDate" name="endDate">
+                    </div>
                     <div class="file-upload-container">
-                        <label for="fileUpload" class="file-upload-label">Profile Picture</label>
-                        <label for="fileUpload" class="custom-file-upload">
+                        <label class="file-upload-label">Profile Picture</label>
+                        <label class="custom-file-upload">
                             <span>Choose File</span>
                         </label>
                         <input type="file" id="fileUpload" name="fileUpload" accept="image/*" style="display: none;" />
@@ -291,13 +210,13 @@ session_start();
 
                             echo "<tr class='highlight'>";
                             echo "<td>" . $id . "</td>";
-                            echo "<td>" . $lname . "," . $fname . " " . $mname . "</td>";
+                            echo "<td>" . $lname . ", " . $fname . " " . $mname . "</td>";
                             echo "<td>" . $school . "</td>";
                             echo "<td>" . $course . "</td>";
                             echo "<td>" . $start . "</td>";
                             echo "<td>" . $end . "</td>";
                             echo "<td>" . $hours . " hours</td>";
-                            echo "<td></td>"; // Adjust this for remaining hours
+                            echo "<td>" . $hours . " hours</td>"; // Adjust this for remaining hours
                             echo "<td>" . $status . "</td>"; // Adjust this for status
                             echo "</tr>";
                         }

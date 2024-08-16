@@ -526,29 +526,36 @@ tbody:hover tr:hover td {
 /* Container for file upload and label */
 .file-upload-container {
     display: flex;
-    align-items: center; /* Align items vertically */
+    flex-direction: column; /* Stack the label and button vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    width: 100%; /* Ensure the container takes up full width */
+    height: 100%; /* Ensure the container takes up full height */
+    text-align: center; /* Center text within the container */
     gap: 15px; /* Space between the file upload button and the label */
+    padding-left: 200px;
+    flex: 1 1 100%;
 }
 
 /* Style for custom file upload label */
 .custom-file-upload {
-    display: inline-block;
-    padding: 7px 97px; /* Added more horizontal padding */
+    display: flex;
+    padding: 150sspx 97px; /* Adjust horizontal padding as needed */
     border: 1px solid #ccc;
     border-radius: 15px;
     box-sizing: border-box;
     font-size: 14px;
     text-align: center;
-    background-color: #f9f9f9; /* Light background color */
-    color: #444; /* Text color */
+    background-color: #f9f9f9;
+    color: #444;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .custom-file-upload:hover {
-    background-color: #fff; /* White background on hover */
-    color: #444; /* Black text color on hover */
-    border-color: #444; /* Black border color on hover */
+    background-color: #fff;
+    color: #444;
+    border-color: #444;
 }
 
 /* Style for the profile picture label */
