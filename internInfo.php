@@ -38,7 +38,7 @@
             <h2>Kapatid ni Joanna</h2>
             <p>Cavite State University - Naic</p>
         </div>
-        <div class="details">
+    <div class="details">
     <div class="detail">Name: Mark Joven A. Garcia</div>
     <div class="detail">Birth  Date: 04/05/03</div>
     <div class="detail">Age: 21</div>
@@ -46,11 +46,14 @@
     <div class="detail">Contact No: 093564457486</div>
     <div class="detail">Guardian: Maryln A. Garcia</div>
     <div class="detail">Parent Contact No: 093564457486</div>
+    <div class="button-detail">
+        <button class="btn-time">UPDATE</button>
+        <button class="btn-time2">DELETE</button>
+    </div>
 </div>
-
-        <div class="logo">
-            <img src="img/EACMedOnly.png" alt="EACMed Logo">
-        </div>
+    <div class="logo">
+        <img src="img/EACMedOnly.png" alt="EACMed Logo">
+    </div>
     </div>
     <div class="attendance-record">
         <div class="table-container">
@@ -62,6 +65,7 @@
                         <th>Time Out</th>
                         <th>Rendered Time</th>
                         <th>Remaining Time</th>
+                        <th>Allow OT</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,35 +74,40 @@
                         <td>7:36 AM</td>
                         <td>5:12 PM</td>
                         <td>Complete</td>
-                        <td>232 Hours</td>
+                        <td>224 Hours</td>
+                        <td>Yes</td>
                     </tr>
                     <tr>
                         <td>07-23-24</td>
                         <td>7:38 AM</td>
                         <td>5:16 PM</td>
                         <td>Complete</td>
-                        <td>232 Hours</td>
+                        <td>216 Hours</td>
+                        <td>Yes</td>
                     </tr>
                     <tr>
                         <td>07-24-24</td>
                         <td>7:51 AM</td>
                         <td>5:38 PM</td>
                         <td>Complete</td>
-                        <td>232 Hours</td>
+                        <td>208 Hours</td>
+                        <td>Yes</td>
                     </tr>
                     <tr>
                         <td>07-25-24</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>232 Hours</td>
+                        <td>7:59 AM</td>
+                        <td>5:00 PM</td>
+                        <td>Complete</td>
+                        <td>200 Hours</td>
+                        <td>No</td>
                     </tr>
                     <tr>
                         <td>07-26-24</td>
                         <td>7:58 AM</td>
                         <td>5:29 PM</td>
                         <td>Complete</td>
-                        <td>232 Hours</td>
+                        <td>192 Hours</td>
+                        <td>Yes</td>
                     </tr>
                 </tbody>
             </table>

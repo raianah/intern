@@ -59,7 +59,7 @@
                                 echo "<script>window.location.assign('dashboard.php');</script>";
                             } else {
                                 echo "<script>alert('Invalid Credentials!');</script>";
-                                echo "<script>window.location.assign('login.php');</script>";
+                                echo "<script>window.location.assign('index.php');</script>";
                             }
                         }
                     }

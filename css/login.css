@@ -2,11 +2,6 @@
   box-sizing: border-box;
   font-family: "Tahoma", "Trebuchet MS";
 }
-<<<<<<< HEAD
-html {
-  background: url("eac-bg.jpg") no-repeat center;
-  background-size: cover;
-=======
 
 html, body {
   height: 100%;
@@ -18,7 +13,6 @@ html {
   background: url("../img/eac-bg.jpg") no-repeat center center fixed;
   background-size: cover;
   background-position: -300px;
->>>>>>> 9d845a1bc8416a8f912ff044552ffec67e4abc95
 }
 
 section {
@@ -27,11 +21,6 @@ section {
 
 #loginctn {
   position: relative;
-<<<<<<< HEAD
-  /* display: flex;
-  justify-content: right; */
-=======
->>>>>>> 9d845a1bc8416a8f912ff044552ffec67e4abc95
   padding: 50px 0 100px 0;
 }
 

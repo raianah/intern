@@ -36,17 +36,9 @@
             echo "<script>alert('Please Enter A Valid Account! Thank You!');</script>";
             echo "<script>window.location.assign('index.php');</script>";
         } else {
-<<<<<<< HEAD
-            while ($row = mysqli_fetch_assoc($query)) {
-                $user = $row['username'];
-                $hashpwd = $row['password'];
-                $acctype = $row['accrole'];
-
-=======
             $sql = "SELECT * FROM accounttbl WHERE username = '$username';";
             $query = mysqli_query($conn, $sql);
             $exist = mysqli_num_rows($query);
->>>>>>> 9d845a1bc8416a8f912ff044552ffec67e4abc95
 
             if ($exist == 0) {
                 echo "<script>alert('Username Doesn\'t Exist!');</script>";
@@ -80,19 +72,7 @@
     }
     ?>
 
-<<<<<<< HEAD
-
-
-
-
-
-?>
-
-
-<body>
-=======
     <header></header>
->>>>>>> 9d845a1bc8416a8f912ff044552ffec67e4abc95
     <main>
     <section id="loginctn">
         <div id="bgctn">
